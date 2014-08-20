@@ -1,0 +1,7 @@
+- name: ansible test
+  hosts: 127.0.0.1
+  tasks:
+    - name: facts to file
+      shell: ansible --inventory-file=/vagrant/provisioning/inventory --connection=local 127.0.0.1 -m setup > /root/ansible_facts.txt
+      args:
+        creates: /root/ansible_facts.txt
